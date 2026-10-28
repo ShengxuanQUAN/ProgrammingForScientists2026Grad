@@ -3,6 +3,7 @@ import os
 import time
 from math import ceil, prod
 from multiprocessing import Pool
+from time import sleep
 
 
 def chunk_range(n: int, processes: int) -> list[tuple[int, int]]:
@@ -17,6 +18,7 @@ def perm(k: int, n: int) -> int:
     p = 1
     for i in range(k, n + 1):
         p *= i
+    sleep((n - k) / 1000)
     return p
 
 
